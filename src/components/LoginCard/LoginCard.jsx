@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { Button, Card, CardActions, CardContent, CardHeader, Divider, TextField } from '@mui/material'
-import { login } from '../services/authService'
-import { getAllAccommodations } from '../services/accommodationService'
+import { login } from '../../services/authService'
+//import { useNavigate } from 'react-router-dom'
+
 
 function LoginCard() {
-
+    //const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -12,8 +13,7 @@ function LoginCard() {
         const { result } = await login({ email, password })
         console.log(result)
         localStorage.setItem('token', result.token)
-        const accommodations = await getAllAccommodations()
-        console.log(accommodations)
+        //navigate('/accomodation')
          }
   return (
     <Card sx={{ maxWidth: '500px' }}>
