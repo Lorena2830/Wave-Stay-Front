@@ -8,16 +8,47 @@ export const getAllAccommodations = async () => {
         console.log(error)
     }
 }
-
-export const addFavoriteAccommodation = async (id) => {
+  export const getAccommodationById = async (id) => {
     try {
-      const { data } = await app.put(`accommodation/add/${id}`/* ,{}, {
-        headers: {
-          authorization: localStorage.getItem("token"),
-        },
-      } */);
-      return data
+        const { data } = await app.get(`accommodation/get/${id}`);
+        return data;
     } catch (error) {
-      console.log(error);  
+        console.error("Error fetching accommodation:", error);
+        throw error;
     }
-  }
+}
+
+export const createAccommodation = async (accommodationData) => {
+    try {
+        const { data } = await app.post('accommodation', accommodationData);
+        return data; 
+    } catch (error) {
+        console.error("Error creating accommodation:", error);
+        throw error; 
+    }
+}
+
+export const updateAccommodation = async (id) => {
+
+}
+
+export const addOneAccToFavorite = async (id) => {
+    try {
+        const { data } = await app.put(`accommodation/add/${id}`/* ,{}, {
+          headers: {
+            authorization: localStorage.getItem("token"),
+          },
+        } */);
+        return data
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const removeFromFavorites = async (id) => {
+
+}
+
+export const deleteAccommodation = async (id) => {
+
+}
