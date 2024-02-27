@@ -5,15 +5,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
-import { addFavoriteAccommodation } from '../../services/accommodationService'
+import { addOneAccToFavorite } from '../../services/accommodationService'
 
 
 function AccommodationCard({info, favorite=false}) {
   const handleClick = () => {
     if (!favorite) {
-      addFavoriteAccommodation(info.id)
-    } else {
-      // removeFromFavorite(info.id)
+      addOneAccToFavorite(info.id)
     }
   }
     return (
@@ -23,7 +21,7 @@ function AccommodationCard({info, favorite=false}) {
             component="img"
             height="160"
             width="300"
-            image= {info.imageURL}
+            image= {info.imageUrl}
             alt="fotodelacasa"
           />
           <CardContent>
