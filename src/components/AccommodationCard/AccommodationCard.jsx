@@ -29,7 +29,7 @@ function AccommodationCard({info, favorite=false}) {
               {info.name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-            {info.description}
+            {info.description_short}
             </Typography>
           </CardContent>
         </CardActionArea>

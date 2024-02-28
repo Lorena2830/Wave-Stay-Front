@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button, Card, CardActions, CardContent, CardHeader, Divider, TextField } from '@mui/material'
 import { login } from '../services/authService'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom' 
 
 
 function Login() {
@@ -35,7 +36,7 @@ function Login() {
       </CardContent>
       <Divider />
       <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <Button>Register</Button>
+        <Link to= '/signup'><Button>Register</Button></Link>
         <Button onClick={onLogin} color="success">
           Login
         </Button>

@@ -3,6 +3,7 @@ import app from "./config";
 export const getAllAccommodations = async () => {
     try {
         const { data } = await app.get('accommodation')
+        console.log(data)
         return data
     } catch (error) {
         console.log(error)
@@ -10,7 +11,8 @@ export const getAllAccommodations = async () => {
 }
   export const getAccommodationById = async (id) => {
     try {
-        const { data } = await app.get(`accommodation/get/${id}`);
+        const { data } = await app.get(`accommodation/${id}`);
+        console.log(data)
         return data;
     } catch (error) {
         console.error("Error fetching accommodation:", error);
