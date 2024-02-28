@@ -8,34 +8,29 @@ function Accommodation() {
  
   const { accommodationId } = useParams()
  
-  const [showOneAccommodation, setShowOneAccommodation] = useState()
+  const [showOneAccommodation, setShowOneAccommodation] = useState([])
 
   useEffect(() => {
       const showAcc = async () => {
-          const data = await getAccommodationById(accommodationId)
-          console.log(accommodationId)
-          setShowOneAccommodation(data)
-          console.log(showOneAccommodation)
+        try {
+          const {result} = await getAccommodationById(accommodationId)
+          console.log(result)
+          setShowOneAccommodation(result)
+          console.log(showOneAccommodation) 
+        } catch (error) {
+          console.log(error)
+        }
         } 
         showAcc()   
-
   }, [accommodationId])
-
-  function loadShowOneAcc(){
-    const result = showOneAccommodation.map((acc, index) => {
-        return (
-        <div id='cocktail' key={index}>
-        <AccommodationUnique info={acc}/>
-        </div>
-        ) 
-    })
-    return <div id='result'>{result}</div>
-}
+  
+  // useEffect(() => {
+  //   console.log(showOneAccommodation);
+  // }, [showOneAccommodation]);
 
   return (
     <div>
-  {/*  {loadShowOneAcc()} */}
-  <AccommodationUnique info={showOneAccommodation}/>
+   <AccommodationUnique info={showOneAccommodation}/> 
     </div>
   )
 }

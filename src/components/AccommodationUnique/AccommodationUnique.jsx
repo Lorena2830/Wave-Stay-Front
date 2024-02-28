@@ -1,15 +1,21 @@
 import React from 'react'
 
-
 function AccommodationUnique({info}) {
-  console.log(info)
   return (
-    <div>
-    <img>{info.result.imageUrl}</img>
-    <img>{info.result.imageUrl1}</img>
-    <img>{info.result.imageUrl2}</img>
+    <div id= 'oneCard'>
+  <h2>{info.name}</h2>
+  <img src={info.imageUrl} alt="" />
+  <img src={info.imageUrl1} alt="" />
+  <img src={info.imageUrl2} alt="" />
+  <p>HABITACIONES: {info.bedrooms}</p>
+  <p>{info.price} €</p>
+  <p>{info.address}</p>
+  <p>{info.description_large}</p>
+  <p>{info.rating}</p>
     </div>
   )
 }
 
 export default AccommodationUnique
+
+

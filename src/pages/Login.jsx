@@ -12,7 +12,7 @@ function Login() {
 
     const onLogin = async () => {
         const { result } = await login({ email, password })
-        console.log(result)
+        
         localStorage.setItem('token', result.token)
         navigate('/home')
          }
