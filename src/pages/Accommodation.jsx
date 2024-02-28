@@ -16,12 +16,14 @@ function Accommodation() {
   const displayAccommodations = () => {
     return accommodations.map((accommodation, index) => {
       return (
-        <AccommodationCard key={index} info={accommodation} />
+        <div key={index}> 
+        <AccommodationCard  info={accommodation} />
+         </div>
       )
     })
   }
   return (
-    <div style={{display: 'flex', alignItems: 'center', height: '80vh'}}>
+    <div style={{display: 'flex', alignItems: 'center', gap:'30px' , flexWrap: 'wrap', height: '80vh', margin:'60px', justifyContent: 'center'}}>
       {
         displayAccommodations()
       }

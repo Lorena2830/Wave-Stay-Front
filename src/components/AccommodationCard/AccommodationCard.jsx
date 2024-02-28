@@ -15,7 +15,7 @@ function AccommodationCard({info, favorite=false}) {
     }
   }
     return (
-      <Card sx={{ maxWidth: 345 }}>
+      <Card id= 'accommodation'sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia
             component="img"
@@ -33,8 +33,8 @@ function AccommodationCard({info, favorite=false}) {
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions>
-          <Button size="small" onClick={handleClick}>{favorite ? 'Remove' : 'Add Favorite'}  
+        <CardActions id= 'favorite'>
+          <Button size="large" onClick={handleClick}>{favorite ? 'Remove' : 'Add Favorite'}  
           </Button>
         </CardActions>
       </Card>

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const app = axios.create({
-    baseURL: "http://localhost:3000/api/"
+    baseURL: "https://wavestay-project.onrender.com/api"
 });
 
 export default app

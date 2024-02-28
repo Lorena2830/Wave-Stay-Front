@@ -33,6 +33,13 @@ body {
 #root {
   width: 100%;
 }
+#accommodation {
+  width: 300px;
+  height: 400px;
+}
+#favorite {
+  justify-content: center;
+}
 
 h1 {
   font-size: 3.2em;
