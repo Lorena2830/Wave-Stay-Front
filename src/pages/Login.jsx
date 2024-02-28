@@ -13,7 +13,7 @@ function Login() {
         const { result } = await login({ email, password })
         console.log(result)
         localStorage.setItem('token', result.token)
-        navigate('/accommodation')
+        navigate('/home')
          }
   return (
     <Card sx={{ maxWidth: '500px' }}>
