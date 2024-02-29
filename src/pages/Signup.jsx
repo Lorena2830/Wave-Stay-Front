@@ -23,7 +23,7 @@ function Signup() {
     }
   } 
   return (
-    <Card sx={{ maxWidth: '500px' }}>
+    <Card sx={{ maxWidth: '500px', opacity:'100' }}>
       <CardHeader title="Sign Up" />
       <CardContent>
         <TextField
