@@ -4,20 +4,20 @@ import { useNavigate } from 'react-router-dom'
 import {Card, CardHeader, TextField, CardContent, Divider, Button, CardActions} from '@mui/material'
 import { signup } from '../services/authService'
 
+
 function Signup() {
   const navigate = useNavigate()
   const [username, setUserName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [passwpordR, setPasswordR] = useState('')
+  const [confirmP, setConfirmP] = useState('')
 
   const onSignUp = async () => {
-    if (password !== passwpordR) {
+    if (password !== confirmP) {
       navigate('/signup')
-      return window.alert('Password must be the same.')
+      return console.log('Las contraseñas no coinciden')
     }  else {
       const  result  = await signup({username, email, password})
-      console.log(result)
       localStorage.setItem('token', result)
       navigate('/home')
     }
@@ -48,7 +48,7 @@ function Signup() {
           sx={{ marginBottom: '20px' }}
         />
         <TextField
-          onChange={(e) => setPasswordR(e.target.value)}
+          onChange={(e) => setConfirmP(e.target.value)}
           label="Repeat Password"
           variant="outlined"
           fullWidth={true}

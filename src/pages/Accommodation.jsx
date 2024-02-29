@@ -24,10 +24,6 @@ function Accommodation() {
         showAcc()   
   }, [accommodationId])
   
-  // useEffect(() => {
-  //   console.log(showOneAccommodation);
-  // }, [showOneAccommodation]);
-
   return (
     <div>
    <AccommodationUnique info={showOneAccommodation}/> 
