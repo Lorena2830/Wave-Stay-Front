@@ -4,21 +4,15 @@ import {getAllAccommodations} from '../services/accommodationService'
 import { Link } from "react-router-dom"
 
 
-export let valueId;
 function Home() {
   const [accommodations, setAccommodation] = useState([])
   useEffect(() => {
     const getAccommodations = async () => {
       const { result } = await getAllAccommodations()
-      //console.log(data)
       setAccommodation(result)
     }
     getAccommodations()
   }, [])
-
-  function handleClick(id) {
-    valueId = id
-  }
 
   const displayAccommodations = () => {
     return accommodations.map((accommodation, index) => {
