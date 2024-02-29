@@ -98,7 +98,7 @@ export default function Header() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <Link to='home/profile'><MenuItem onClick={handleMenuClose}>Profile</MenuItem></Link>
      <Link to = '/home/favorite'><MenuItem onClick={handleMenuClose}>My Favorites</MenuItem></Link> 
     </Menu>
   );

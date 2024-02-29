@@ -4,14 +4,15 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-
+import { Link } from 'react-router-dom';
 import { addOneAccToFavorite } from '../../services/accommodationService'
 
 
 function AccommodationCard({info, favorite=false}) {
   const handleClick = () => {
     if (!favorite) {
-      addOneAccToFavorite(info.id)
+      console.log(info)
+       addOneAccToFavorite(info.id) 
     }
   }
     return (
@@ -33,9 +34,11 @@ function AccommodationCard({info, favorite=false}) {
             </Typography>
           </CardContent>
         </CardActionArea>
+        
         <CardActions id= 'favorite'>
-          <Button size="large" onClick={handleClick}>{favorite ? 'Remove' : 'Add Favorite'}  
+          <Link><Button size="large" onClick={handleClick}>{favorite ? 'Remove' : 'Add Favorite'}  
           </Button>
+          </Link>
         </CardActions>
       </Card>
     );
