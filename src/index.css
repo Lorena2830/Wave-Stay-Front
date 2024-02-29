@@ -40,7 +40,12 @@ body {
 #favorite {
   justify-content: center;
 }
-
+#signupStyle {
+  width: 100%;
+  background-image: url('../public/images/nico-bhlr-QT-l619id6w-unsplash.jpg');
+  background-size: cover;
+  height: 1000px;
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
