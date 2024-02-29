@@ -13,9 +13,9 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -99,7 +99,7 @@ export default function Header() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+     <Link to = '/home/favorite'><MenuItem onClick={handleMenuClose}>My Favorites</MenuItem></Link> 
     </Menu>
   );
 
@@ -128,7 +128,7 @@ export default function Header() {
         </IconButton>
         <p>Messages</p>
       </MenuItem> */}
-      {/* <MenuItem>
+      <MenuItem>
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
@@ -139,7 +139,7 @@ export default function Header() {
           </Badge>
         </IconButton>
         <p>Notifications</p>
-      </MenuItem> */}
+      </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -187,18 +187,18 @@ export default function Header() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            {/* <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+          {/*   <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
                 <MailIcon />
               </Badge>
-            </IconButton>
-            <IconButton
+            </IconButton> */}
+           {/*  <IconButton
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
+              <Badge badgeContent={5} color="error">
+               <Link to = '/home/favorite'><NotificationsIcon /> </Link> 
               </Badge>
             </IconButton> */}
             <IconButton
