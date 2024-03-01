@@ -10,18 +10,21 @@ import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
+import SurfingIcon from '@mui/icons-material/Surfing';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Link } from 'react-router-dom';
-import './Header.css'
+import '../Header/Header.css'
+import { Surfing } from '@mui/icons-material';
+
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  backgroundColor: alpha(theme.palette.common.white, 0.25),
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
@@ -29,8 +32,8 @@ const Search = styled('div')(({ theme }) => ({
   marginLeft: 0,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(3),
-    width: 'auto',
+    marginLeft: theme.spacing(1),
+    width: '50%',
   },
 }));
 
@@ -48,7 +51,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -99,8 +101,9 @@ export default function Header() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <Link to='home/profile'><MenuItem onClick={handleMenuClose}>Profile</MenuItem></Link>
-     <Link to ={`/home/favorite`}><MenuItem onClick={handleMenuClose}>My Favorites</MenuItem></Link> 
+      <Link to={`/home/profile`}><MenuItem onClick={handleMenuClose}>My Profile</MenuItem></Link>
+     <Link to ={`/home/favorite`}><MenuItem onClick={handleMenuClose}>My Favorites</MenuItem></Link>
+     
     </Menu>
   );
 
@@ -121,14 +124,6 @@ export default function Header() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      {/* <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem> */}
       <MenuItem>
         <IconButton
           size="large"
@@ -160,14 +155,17 @@ export default function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
+        <Link to="/home">
+        <IconButton
+          size="large"
+          edge="start"
+          color="inherit"
+          aria-label="open drawer"
+          sx={{ mr: 75, color: "white" }}
           >
-            Wave Stay
-          </Typography>
+         <SurfingIcon />
+          </IconButton>
+          </Link>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -179,23 +177,9 @@ export default function Header() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-          {/*   <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton> */}
-           {/*  <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={5} color="error">
-               <Link to = '/home/favorite'><NotificationsIcon /> </Link> 
-              </Badge>
-            </IconButton> */}
             <IconButton
               size="large"
-              edge="end"
+              edge="center"
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
