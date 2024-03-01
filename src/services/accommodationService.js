@@ -46,11 +46,11 @@ export const getAllAccommodationsFavorites = async (id) => {
 
 export const addOneAccToFavorite = async (id) => {
     try {
-        const { data } = await app.put(`accommodation/add/${id}`,{} )/*,{
+        const { data } = await app.put(`accommodation/add/${id}`, {} ,{
           headers: {
             authorization: localStorage.getItem("token"),
           }
-        } */
+        } )
         return data
     } catch (error) {
         console.log(error);

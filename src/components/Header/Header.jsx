@@ -99,7 +99,7 @@ export default function Header() {
       onClose={handleMenuClose}
     >
       <Link to='home/profile'><MenuItem onClick={handleMenuClose}>Profile</MenuItem></Link>
-     <Link to = '/home/favorite'><MenuItem onClick={handleMenuClose}>My Favorites</MenuItem></Link> 
+     <Link to ={'/home/favorite'}><MenuItem onClick={handleMenuClose}>My Favorites</MenuItem></Link> 
     </Menu>
   );
 
