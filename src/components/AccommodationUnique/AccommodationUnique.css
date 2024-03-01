@@ -113,7 +113,8 @@ hr {
    margin-top: 5%;
 }
 #divCalendary {
-    width: 70%;
+    height: 500px;
+    width: 50%;
     display: flex;
 }
 #reservar {
@@ -121,5 +122,5 @@ hr {
     color: white;
     height: 10%;
     margin-top: 55%;
-    margin-left: 10%;
+    margin-left: 15%;
 }

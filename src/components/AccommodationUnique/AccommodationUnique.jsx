@@ -20,7 +20,11 @@ function AccommodationUnique({ info }) {
       key: 'selection'
     }
   ]);
+  //const [booking, setBooking] = useState([])   //REVISAR Y SEGUIR A PARTIR DE ESTA IDEA 
 
+  const handleClick = () => {
+    console.log('reservado')
+  }
   return (
     <div className='oneCard'> {/* Div de todo el componente */}
       <div className="space"></div>
@@ -65,7 +69,7 @@ function AccommodationUnique({ info }) {
             <strong>Uno de los <br />alojamientos que <br />más gustan</strong>
           </div>
           <div>
-            <strong> 4 Stars</strong>
+            <strong></strong>
             <Stack spacing={1}>
               {/*  <Rating name="half-rating" defaultValue={3.5} precision={0.5} /> */}
               <Rating name="half-rating-read" defaultValue={4} precision={0.5} readOnly />
@@ -119,7 +123,7 @@ function AccommodationUnique({ info }) {
       </div>
 
 
-      <hr />{/*¿Qué hay en este alojamiento?*/}
+      <hr />
       <div className="box">
         <p><h3>¿Qué hay en este alojamiento?</h3><br /></p>
         <p><BeachAccessIcon />Vistas a la playa</p>
@@ -137,7 +141,7 @@ function AccommodationUnique({ info }) {
           ranges={state}
           className='calendary'
         />
-      <button id='reservar'>RESERVAR</button>
+      <button id='reservar' onClick={handleClick}>RESERVAR</button>
       </div>
     </div>
   )
