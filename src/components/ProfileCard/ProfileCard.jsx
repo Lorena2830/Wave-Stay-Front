@@ -1,14 +1,13 @@
 import React from 'react';
 import './ProfileCard.css';
 
-function ProfileCard(props) {
-  const { name, photoUrl, description } = props;
+function ProfileCard({ user }) {
+  console.log(user.result)
 
   return (
     <div className="profile-card">
-      <img src={photoUrl} alt={name} />
-      <h2>{name}</h2>
-      <p>{description}</p>
+      <h2>{user.username}</h2>
+      <p>{user.role}</p>
     </div>
   );
 }

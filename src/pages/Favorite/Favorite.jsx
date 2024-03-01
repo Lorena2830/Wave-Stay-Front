@@ -1,8 +1,8 @@
-import React from 'react'
 import { useState, useEffect } from 'react'
-import { getAllAccommodationsFavorites } from '../services/accommodationService'
-import AccommodationCard from '../components/AccommodationCard/AccommodationCard'
-import { useParams } from 'react-router-dom'
+import { getAllAccommodationsFavorites } from '../../services/accommodationService'
+import AccommodationCard from '../../components/AccommodationCard/AccommodationCard'
+import './Favorite.css'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 function Favorite() {
 const [favorites, setFavorites] = useState([])
@@ -35,10 +35,15 @@ const [favorites, setFavorites] = useState([])
        }
   return (
   <>
-  <h1>Your list of favorites...</h1>
-   {displayFavoriteAcc()} 
+  <div className='imag'></div>
+  <div className='favorite'>
+  <div className='titulo'><h2><FavoriteBorderIcon style={{ color: 'pink' }} />Alojamientos favoritos</h2></div>
+  <div className='space'></div>
+  <div className='tarjeta'>{displayFavoriteAcc() } </div>
+  </div>
+   
   </>
   )
 }
 
-export default Favorite
+export default Favorite 

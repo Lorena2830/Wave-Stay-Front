@@ -1,0 +1,39 @@
+body {
+    height: 90%;
+}
+
+.favorite {
+    width: 70%;
+    margin: auto 15%; 
+    padding: 10px;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    background-size: cover;
+    background-position: center;
+}
+
+.space{
+    height: 80px;
+}
+
+hr {
+    height: 1px;
+    color: rgba(243, 243, 243, 0.212);
+
+}
+
+.box {
+    height: 230px;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-top: 20px;
+} 
