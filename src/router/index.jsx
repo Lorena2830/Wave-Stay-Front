@@ -32,7 +32,6 @@ const router = createBrowserRouter([
              
             {
                 path:'/home/favorite',
-                 //:userId',
                 element: <Favorite/>
             }, 
             {

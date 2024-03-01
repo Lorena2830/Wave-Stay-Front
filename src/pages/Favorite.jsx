@@ -5,14 +5,12 @@ import AccommodationCard from '../components/AccommodationCard/AccommodationCard
 import { useParams } from 'react-router-dom'
 
 function Favorite() {
-  const { userId } = useParams()
-  
-    const [favorites, setFavorites] = useState()
+const [favorites, setFavorites] = useState([])
     
     useEffect(()=> {
         const getFavorites = async () => {
           try {
-            const {result} = await getAllAccommodationsFavorites(userId)
+            const {result} = await getAllAccommodationsFavorites()
             console.log(result)
             setFavorites(result)
             console.log(favorites)
@@ -21,19 +19,24 @@ function Favorite() {
           }
         }
         getFavorites()
-      }, [userId])
+      }, [])
 
-      // const displayFavoriteAcc = () => {
-      //   return favorites.map((acc, index) => {
-      //     return (
-      //       <AccommodationCard key={index} info={acc} favorite={true} />
-      //     )
-      //   })
-      // }
+
+      useEffect(() => {
+        console.log(favorites)
+      }, [favorites])
+
+       const displayFavoriteAcc = () => {
+        return favorites.map((acc, index) => {
+           return (
+             <AccommodationCard key={index} info={acc} favorite={true} />
+           )
+         })
+       }
   return (
   <>
   <h1>Your list of favorites...</h1>
-  {/* {displayFavoriteAcc()} */}
+   {displayFavoriteAcc()} 
   </>
   )
 }

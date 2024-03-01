@@ -34,9 +34,13 @@ export const createAccommodation = async (accommodationData) => {
 
 } */
 
-export const getAllAccommodationsFavorites = async (id) => {
+export const getAllAccommodationsFavorites = async () => {
     try {
-        const { data } = await app.get(`accommodation/fav/${id}`)
+        const { data } = await app.get(`accommodation/fav`, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+              }
+        })
         console.log(data)
         return data
     } catch (error) {
