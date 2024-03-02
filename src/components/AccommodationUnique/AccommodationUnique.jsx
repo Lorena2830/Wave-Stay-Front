@@ -11,21 +11,56 @@ import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css'
 import { Link } from 'react-router-dom';
 import { useState } from 'react'
-import { DateRangePicker } from 'react-date-range'
+import { useParams } from 'react-router-dom';
+import { DateRange } from 'react-date-range'
+import { useEffect } from 'react';
+import { createBooking } from '../../services/bookingService';
 
-function AccommodationUnique({ info }) {
-  const [state, setState] = useState([
-    {
-      startDate: new Date(),
-      endDate: null,
-      key: 'selection'
+function AccommodationUnique({ info, data }) {
+  const [disableDates, setDisableDates] = useState([])
+  const { accommodationId } = useParams()
+  const [ranges, setRanges] = useState([{
+    startDate: new Date(),
+    endDate: null,
+    key: 'selection'
+  }])
+
+  useEffect(() => {
+    let test = []
+    data.forEach((booking) => {
+      test.push(...obtenerFechasIntermedias(booking.startdate, booking.endingdate))
+    })
+    setDisableDates(test)
+  }, [data])
+
+  function obtenerFechasIntermedias(fechaInicio, fechaFin) {
+    const fechasIntermedias = [];
+
+    // Convierte las cadenas de fecha en objetos Date
+    const fechaInicioObj = new Date(fechaInicio);
+    const fechaFinObj = new Date(fechaFin);
+
+    // Incrementa la fecha de inicio hasta la fecha de fin y agrega cada fecha al array
+    for (let fecha = fechaInicioObj; fecha <= fechaFinObj; fecha.setDate(fecha.getDate() + 1)) {
+      fechasIntermedias.push(new Date(fecha));
     }
-  ]);
-  //const [booking, setBooking] = useState([])   //REVISAR Y SEGUIR A PARTIR DE ESTA IDEA 
 
-  const handleClick = () => {
-    console.log('reservado')
+    return fechasIntermedias;
   }
+
+  async function handdleCreateBooking() {
+    const userId = localStorage.getItem('id')
+    const { result } = await createBooking({ accommodationId: accommodationId, startdate: ranges[0].startDate, endingdate: ranges[0].endDate, userId })
+    console.log(result)
+  }
+
+  function handleSelect(newRanges) {
+    setRanges([])
+    setRanges([newRanges.selection])
+    //console.log(ranges, 'ranges');
+    console.log(newRanges.selection, 'newRanges');
+  }
+
   return (
     <div className='oneCard'> {/* Div de todo el componente */}
       <div className="space"></div>
@@ -134,18 +169,19 @@ function AccommodationUnique({ info }) {
         <p>Aparcamiento privado</p>
       </div>
       <hr />
-        <h3>Elige la duración de tu estancia:</h3>
-      <div id = 'divCalendary'>
-        <DateRangePicker
+      <h3>Elige la duración de tu estancia:</h3>
+      <div id='divCalendary'>
+        <DateRange
           editableDateInputs={true}
-          onChange={item => setState([item.selection])}
+          onChange={handleSelect}
           moveRangeOnFirstSelection={false}
-          ranges={state}
+          ranges={ranges}
+          disabledDates={disableDates}
           className='calendary'
         />
-      <Link to = '/home/booking'>
-      <button id='reservar' onClick={handleClick}>RESERVAR</button>
-      </Link>
+        <Link to='/home/booking'>
+          <button id='reservar' onClick={handdleCreateBooking}>RESERVAR</button>
+        </Link>
       </div>
     </div>
   )

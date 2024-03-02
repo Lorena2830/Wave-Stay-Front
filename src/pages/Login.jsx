@@ -24,7 +24,9 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { result } = await login({ email, password });
+    console.log(result, 'result')
     localStorage.setItem('token', result.token);
+    localStorage.setItem('id', result.id);
     navigate('/home');
   };
 
