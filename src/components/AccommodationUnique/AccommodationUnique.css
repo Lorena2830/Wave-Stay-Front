@@ -114,13 +114,13 @@ hr {
 }
 #divCalendary {
     height: 500px;
-    width: 50%;
+    width: 70%;
     display: flex;
 }
 #reservar {
     background-color: #068be4;
     color: white;
     height: 10%;
-    margin-top: 55%;
-    margin-left: 15%;
+    margin-top: 20%;
+    margin-left: 90%;
 }

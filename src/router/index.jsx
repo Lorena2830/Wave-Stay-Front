@@ -5,6 +5,7 @@ import Profile from '../pages/Profile/Profile';
 import Signup from '../pages/Signup' 
 import Favorite from "../pages/Favorite/Favorite";
 import Accommodation from '../pages/Accommodation'; 
+import Booking from "../pages/Booking/Booking";
 
 import Root from "../layouts";
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path:'/home/profile',
                 element: <Profile/>
+            },
+            {
+                path:'/home/booking',
+                element: <Booking/>
             }
     ]
 }

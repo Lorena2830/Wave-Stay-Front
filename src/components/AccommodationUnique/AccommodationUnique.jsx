@@ -9,6 +9,7 @@ import SurfingIcon from '@mui/icons-material/Surfing';
 import WifiIcon from '@mui/icons-material/Wifi';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css'
+import { Link } from 'react-router-dom';
 import { useState } from 'react'
 import { DateRangePicker } from 'react-date-range'
 
@@ -133,6 +134,7 @@ function AccommodationUnique({ info }) {
         <p>Aparcamiento privado</p>
       </div>
       <hr />
+        <h3>Elige la duración de tu estancia:</h3>
       <div id = 'divCalendary'>
         <DateRangePicker
           editableDateInputs={true}
@@ -141,7 +143,9 @@ function AccommodationUnique({ info }) {
           ranges={state}
           className='calendary'
         />
+      <Link to = '/home/booking'>
       <button id='reservar' onClick={handleClick}>RESERVAR</button>
+      </Link>
       </div>
     </div>
   )
