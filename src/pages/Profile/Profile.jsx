@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import ProfileCard from '../../components/ProfileCard/ProfileCard';
-import BookingCard from '../../components/BookingCard/BookingCard';
+import AccommodationBookingCard from '../../components/AccommodationBookingCard/AccommodationBookingCard';
 import { getOwnProfile } from '../../services/userService';
-import { getAllBooking } from '../../services/bookingService';
 
 function Profile() {
-  const [bookings, setBookings] = useState([])
-  const [user, setUser] = useState({});
-
+  const [user, setUser] = useState();
+  
   useEffect(() => {
     const fetchProfile = async () => {
       try {
@@ -20,34 +17,34 @@ function Profile() {
     fetchProfile();
   }, []);
 
-  useEffect(()=> {
-    const getBookings = async () => {
-      try {
-        const result = await getAllBooking()
-        //console.log(result, 'result')
-        setBookings(result)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getBookings()
-  }, [])
-  
-  useEffect(() => {
-    console.log(bookings, 'bookings')
-  }, [bookings])
-  
   const displayBookings = () => {
-    return bookings.map((booking, index) => {
+    return user.bookings.map((booking, index) => {
        return (
-         <BookingCard key={index} info={booking} />
+        <>
+        <AccommodationBookingCard accommodations ={user.accommodation} key={index} info={booking} />
+        </>
        )
      })
    }
     return (
-    <>
-    <ProfileCard user={user} />
-    {displayBookings()}
+      <>
+      {
+        !user ? 
+        <h1>
+          Cargando...
+        </h1> :
+        <>
+          <h1>
+            Welcome!
+          </h1>
+          <div>
+            <h1>
+              My bookings...
+            </h1>
+            { displayBookings() }
+          </div>
+        </>
+      }
     </>
   );
 }

@@ -62,6 +62,13 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+#profile {
+  margin-left: 11%;
+  align-items: center;
+}
+#cancelar {
+  width: 80%;
+}
 button:hover {
   border-color: #646cff;
 }

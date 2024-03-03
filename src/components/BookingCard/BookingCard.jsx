@@ -1,6 +1,6 @@
 import React from 'react'
 
-function BookingCard({info}) {
+function BookingCard() {
   return (
     <div>BookingCard</div>
   )

@@ -52,7 +52,7 @@ function Signup() {
         }}
       >
         <CssBaseline />
-        <Container component="main" maxWidth="xs" sx={{ backgroundColor: 'rgba(10, 10, 10, 0.4)', borderRadius: '40px', padding: '30px' }}>
+        <Container component="main" maxWidth="xs" sx={{ backgroundColor: 'rgba(10, 10, 10, 0.4)', borderRadius: '40px', padding: '30px', opacity: 3.9 }}>
           <Box
             sx={{
               display: 'flex',
