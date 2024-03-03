@@ -1,5 +1,15 @@
 import app from "./config";
 
+export const getAllBooking = async () => {
+    try {
+        const { data } = await app.get('booking')
+       console.log(data, 'data')
+        return data
+    } catch (error) {
+        console.log(error)
+    }
+}
+
  export const getBookingByAccommodation = async (id) => {
     try {
         const { data } = await app.get(`/booking/accommodation/${id}`);

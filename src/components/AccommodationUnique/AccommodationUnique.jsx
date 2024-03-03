@@ -57,7 +57,6 @@ function AccommodationUnique({ info, data }) {
   function handleSelect(newRanges) {
     setRanges([])
     setRanges([newRanges.selection])
-    //console.log(ranges, 'ranges');
     console.log(newRanges.selection, 'newRanges');
   }
 

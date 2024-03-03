@@ -6,7 +6,7 @@ function ProfileCard({ user }) {
 
   return (
     <div className="profile-card">
-      <h2>{user.username}</h2>
+      <h2>Hola {user.username}</h2>
       <p>{user.role}</p>
     </div>
   );
