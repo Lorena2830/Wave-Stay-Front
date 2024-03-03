@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { AccommodationProvider } from './components/Context/Context.jsx';
 
 
 import './index.css'
@@ -12,6 +13,8 @@ import router from './router/index.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AccommodationProvider>
     <RouterProvider router={router} />
+    </AccommodationProvider>
   </React.StrictMode>,
 )

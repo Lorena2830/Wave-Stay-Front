@@ -18,7 +18,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import { Link } from 'react-router-dom';
 import '../Header/Header.css'
 import { Surfing } from '@mui/icons-material';
-
+import { AccommodationContext, AccommodationProvider } from '../Context/Context';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -61,6 +61,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Header() {
+  const { updateFilteredAccommodations } = React.useContext(AccommodationContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -83,6 +84,12 @@ export default function Header() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const handleChange = (event) => {
+    const searchText = event.target.value;
+    updateFilteredAccommodations(searchText);
+  };
+
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -172,6 +179,7 @@ export default function Header() {
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
+              onChange={handleChange}
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
