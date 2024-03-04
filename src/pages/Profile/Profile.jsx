@@ -22,7 +22,7 @@ function Profile() {
     return user.bookings.map((booking, index) => {
        return (
         <>
-       <AccommodationBookingCard accommodations ={user.accommodation} key={index} info={booking} reservado= {true} />
+       <AccommodationBookingCard accommodations ={user.accommodation} key={index} info={booking} />
         </>
        )
      })

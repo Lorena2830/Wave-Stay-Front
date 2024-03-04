@@ -135,7 +135,7 @@ function Login() {
                     color: 'black'
                   }}
                   >
-                    {"¿No tienes un usuario? Regístrate"}
+                    {"¿No tienes una cuenta? Regístrate"}
                   </Link>
                 </Grid>
               </Grid>

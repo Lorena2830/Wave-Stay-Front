@@ -44,10 +44,11 @@ export const getBookingsByUser = async (id) => {
 
 export const removeBookingFromUser = async (id) => {
     try {
-        const { data } = await app.delete(`booking/remove/${id}`,{
+        const { data } = await app.delete('booking/remove', {
           headers: {
             authorization: localStorage.getItem("token"),
-          }
+          },
+          data: { id: id }
         } )
         return data
     } catch (error) {

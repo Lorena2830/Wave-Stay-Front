@@ -10,12 +10,15 @@ import { useEffect, useState } from 'react';
 import './AccommodationBookingCard.css'
 import { removeBookingFromUser } from '../../services/bookingService'
 
-export default function AccommodationBookingCard({ accommodations, info, reservado = true }) {
+export default function AccommodationBookingCard({ accommodations, info}) {
+const [reservado, setReservado] = useState(true)
 
   const handleClick = () => {
-    if (!reservado) {
-      console.log(info.id)
+    const estabaReservado = reservado;
+    setReservado(!estabaReservado)
+    if (estabaReservado) {
       removeBookingFromUser(info.id) 
+      console.log(reservado)
     }
   }
   const [infoState, setInfoState] = useState([])
@@ -42,7 +45,6 @@ export default function AccommodationBookingCard({ accommodations, info, reserva
     })
     setInfoState(info)
   }, [info, accommodations])
-
   return (
     <Card
       variant="outlined"
