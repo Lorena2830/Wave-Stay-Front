@@ -11,3 +11,23 @@
  #welcome {
     animation: fadeIn 1s ease-in-out; /* Nombre de la animación, duración, y función de temporización */
   }
+
+  #myBookings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4%;
+    justify-content: center;
+    margin-top: 3%;
+  }
+#text {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 3%;
+}
+#welcome {
+margin-top: 3%;
+text-align: center;
+}
+
+
+style={{fontSize:'70px', marginTop:'30px', textAlign:'center',}}

@@ -36,7 +36,7 @@ function AccommodationCard({info, favorite=false}) {
         </CardActionArea>
         
         <CardActions id= 'favorite'>
-          <Link><Button size="large" onClick={handleClick}>{favorite ? 'Remove' : 'Add Favorite'}
+          <Link><Button size="large" onClick={handleClick}>{favorite ? 'Eliminar' : 'Añadir a favorito'}
           </Button>
           </Link>
         </CardActions>

@@ -3,16 +3,6 @@ body {
     z-index: 1;
 }
 
-.all {
-    background-color: rgb(221, 120, 4);
-    height: 200px;
-    text-align: center;
-    vertical-align: middle;
-    position: relative;
-    width: 100%;
-}
-
-
 .parr{
   display: flex;
   justify-content: center; /* Centrar horizontalmente */
@@ -21,10 +11,6 @@ body {
   font-weight: bold;
   font-size: 20px;
   color: rgb(233, 233, 233);
-}
-
-.contenedor_img {
-height: 390px;
 }
 
 .footer {
@@ -43,8 +29,8 @@ height: 390px;
 }
 
 .segundo_bloque {
-  background-color:  rgb(214, 140, 55);
-  height: 100px;
+  background-color: rgb(44, 44, 43);
+  height: 10%;
   text-align: center;
   vertical-align: middle;
   position: relative;
@@ -53,7 +39,9 @@ height: 390px;
   color: rgb(233, 233, 233);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0px -5px 5px rgba(168, 168, 168, 0.5);
   gap: 10px; 
+  opacity: 0.9;
 }
 
 .grid {

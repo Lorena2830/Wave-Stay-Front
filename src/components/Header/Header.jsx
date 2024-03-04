@@ -108,9 +108,9 @@ export default function Header() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <Link to={`/home/profile`}><MenuItem onClick={handleMenuClose}>My Profile</MenuItem></Link>
-     <Link to ={`/home/favorite`}><MenuItem onClick={handleMenuClose}>My Favorites</MenuItem></Link>
-     
+      <Link to={`/home/profile`}><MenuItem onClick={handleMenuClose}>Mi perfil</MenuItem></Link>
+      <Link to={`/home/favorite`}><MenuItem onClick={handleMenuClose}>Mis Favoritos</MenuItem></Link>
+
     </Menu>
   );
 
@@ -160,25 +160,28 @@ export default function Header() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" style={{backgroundColor: '#DD7804'}}>
+      <AppBar position="static" style={{ background: 'linear-gradient(to right, #04ABBB , #DFE523 )' }}>
         <Toolbar>
-        <Link to="/home">
-        <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="open drawer"
-          sx={{ mr: 75, color: "white" }}
-          >
-         <SurfingIcon />
-          </IconButton>
+          <Link to="/home">
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: 2, color: "white" }}
+            >
+              <SurfingIcon />
+            </IconButton>
           </Link>
+          <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontFamily: 'Original Surfer' }}>
+            Wave Stay
+          </Typography>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Buscar..."
               onChange={handleChange}
               inputProps={{ 'aria-label': 'search' }}
             />

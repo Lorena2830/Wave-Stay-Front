@@ -1,5 +1,5 @@
 body {
-    height: 90%;
+    height: 80%;
 }
 
 .favorite {
@@ -11,6 +11,7 @@ body {
 .titulo {
     display: flex;
     flex-direction: column;
+    margin-top: 5%;
     justify-content: center;
     align-items: center; 
     background-size: cover;
@@ -18,7 +19,8 @@ body {
 }
 
 .space{
-    height: 80px;
+    height: 100px;
+  
 }
 
 hr {
@@ -35,5 +37,8 @@ hr {
     display: flex;
     flex-direction: row;
     gap: 25px;
-    margin-top: 20px;
+    margin-top: 5%;
 } 
+#all {
+    height: 100vh;
+}

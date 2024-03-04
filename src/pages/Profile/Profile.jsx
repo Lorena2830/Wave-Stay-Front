@@ -35,14 +35,16 @@ function Profile() {
           Cargando...
         </h1> :
         <>
-          <h1 id='welcome'style={{fontSize:'70px', marginTop:'30px', textAlign:'center',}}>
-            Welcome {user.username}!
+          <h1 id='welcome'>
+              Hola... {user.username}!
           </h1>
           <div>
-            <h1 style={{fontSize:'30px', marginLeft:'80px'}}>
-              My bookings...
-            </h1>
+            <p id='text'>
+              Mis reservas...
+            </p>
+            <div id= 'myBookings'>
             { displayBookings() }
+          </div>
           </div>
         </>
       }
