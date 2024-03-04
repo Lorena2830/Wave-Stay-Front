@@ -32,96 +32,119 @@ function Login() {
 
   const defaultTheme = createTheme({
     typography: {
-      fontFamily: 'Helvetica',
+      fontFamily: 'Original Surfer',
     }
   });
 
   return (
     <ThemeProvider theme={defaultTheme}>
-    <Grid
-      container
-      justifyContent="center" // cambia horizontalmente
-      alignItems="center" // cambia verticalmente
-      sx={{
-        height: '100vh',
-        backgroundImage: 'url(https://images.unsplash.com/photo-1517699418036-fb5d179fef0c?q=80&w=2668&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <CssBaseline />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square sx={{ backgroundColor: 'rgba(205, 205, 205, 0.9)', p: 4, borderRadius: 7}}>
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Avatar sx={{ m: 2, bgcolor: 'orange', opacity: 0.7 }}>
-            <SurfingIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            ¡Bienvenido a Wave Stay!
-          </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1, width: '100%' }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Correo Electrónico"
-              name="email"
-              autoComplete="email"
-              autoFocus
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              sx={{ bgcolor: 'transparent', mb: 2 }}
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Contraseña"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              sx={{ bgcolor: 'transparent', mb: 2 }}
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Recuérdame"
-              sx={{ bgcolor: 'transparent', mb: 2 }}
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ bgcolor: 'orange', opacity: 0.7, mb: 1, borderRadius: 10,}} 
+      <Grid
+        container
+        justifyContent="center" // cambia horizontalmente
+        alignItems="center" // cambia verticalmente
+        sx={{
+          height: '100vh',
+          backgroundImage: 'url(https://images.pexels.com/photos/416676/pexels-photo-416676.jpeg?cs=srgb&dl=pexels-pixabay-416676.jpg&fm=jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <CssBaseline />
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square sx={{ backgroundColor: 'rgba(255, 255, 255, 0.6)', p: 4, borderRadius: 10 }}>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Avatar sx={{ 
+              m: 2, 
+              bgcolor: 'rgba(25,118, 210, 0.9)', 
+              opacity: 1, 
+              }}
             >
-              Iniciar Sesión
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  ¿Olvidaste la contraseña?
-                </Link>
+              <SurfingIcon />
+            </Avatar>
+            <Typography
+              component="h1"
+              variant="h5"
+              sx={{
+                color: 'black'
+              }}
+            >
+              ¡Bienvenido a Wave Stay!
+            </Typography>
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1, width: '100%' }}>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Correo Electrónico"
+                name="email"
+                autoComplete="email"
+                autoFocus
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                sx={{ bgcolor: 'transparent', mb: 2 }}
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Contraseña"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                sx={{ bgcolor: 'transparent', mb: 2 }}
+              />
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                label="Recuérdame"
+                sx={{ bgcolor: 'transparent', mb: 2 }}
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ bgcolor: 'sky-blue', opacity: 0.9, mb: 1, borderRadius: 10, fontSize: '1.1rem' }}
+              >
+                Iniciar Sesión
+              </Button>
+              <Grid container>
+                <Grid item xs>
+                  <Link
+                    href="#"
+                    variant="body3"
+                    sx={{
+                      color: 'black'
+                    }}
+                  >
+                    ¿Olvidaste la contraseña?
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Link 
+                  href="/signup" 
+                  variant="body3"
+                  sx={{
+                    color: 'black'
+                  }}
+                  >
+                    {"¿No tienes un usuario? Regístrate"}
+                  </Link>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Link href="/signup" variant="body2">
-                  {"¿No tienes un usuario? Regístrate"}
-                </Link>
-              </Grid>
-            </Grid>
+            </Box>
           </Box>
-        </Box>
+        </Grid>
       </Grid>
-    </Grid>
-  </ThemeProvider>
-);
+    </ThemeProvider>
+  );
 }
 
 export default Login;
