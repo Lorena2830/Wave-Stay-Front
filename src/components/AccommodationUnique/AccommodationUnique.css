@@ -110,7 +110,8 @@ hr {
     text-align: center;
 }
 .calendary {
-   width: 100%;
+   width: 40%;
+   height: 75%;
    margin-top: 5%;
 }
 #divCalendary {
