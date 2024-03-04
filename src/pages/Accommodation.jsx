@@ -39,7 +39,7 @@ function Accommodation() {
 
   return (
     <div>
-      <AccommodationUnique info={showOneAccommodation} data={schedules} />
+      <AccommodationUnique info={showOneAccommodation} data={schedules} reservado= {false}/>
     </div>
   )
 }

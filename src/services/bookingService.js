@@ -41,3 +41,16 @@ export const getBookingsByUser = async (id) => {
         throw error;
     }
 }
+
+export const removeBookingFromUser = async (id) => {
+    try {
+        const { data } = await app.delete(`booking/remove/${id}`,{
+          headers: {
+            authorization: localStorage.getItem("token"),
+          }
+        } )
+        return data
+    } catch (error) {
+        console.log(error);
+    }
+}

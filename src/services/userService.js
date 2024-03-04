@@ -8,7 +8,7 @@ export const getOwnProfile = async () => {
       }
     });
 
-    console.log('Perfil del usuario obtenido:', data.result);
+    //console.log('Perfil del usuario obtenido:', data.result);
     return data.result
   } catch (error) {
     console.error('Error al obtener el perfil:', error);

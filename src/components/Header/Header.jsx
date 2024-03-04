@@ -181,7 +181,7 @@ export default function Header() {
               <SurfingIcon />
             </IconButton>
           </Link>
-          <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontFamily: 'Original Surfer' }}>
+          <Typography variant="h4" component="div" sx={{ flexGrow: 1, fontFamily: 'Original Surfer' }}>
             Wave Stay
           </Typography>
           <Search>
@@ -194,7 +194,7 @@ export default function Header() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <Box sx={{ flexGrow: 1 }} />
+          <Box sx={{ flexGrow: 2 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton
               size="large"

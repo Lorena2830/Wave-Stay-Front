@@ -11,7 +11,7 @@ import { addOneAccToFavorite } from '../../services/accommodationService'
 function AccommodationCard({info, favorite=false}) {
   const handleClick = () => {
     if (!favorite) {
-      console.log(info)
+      //console.log(info)
        addOneAccToFavorite(info.id) 
     }
   }

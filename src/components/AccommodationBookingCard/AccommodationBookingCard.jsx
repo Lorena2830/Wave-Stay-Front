@@ -8,8 +8,16 @@ import Typography from '@mui/joy/Typography';
 import AccommodationCard from '../AccommodationCard/AccommodationCard';
 import { useEffect, useState } from 'react';
 import './AccommodationBookingCard.css'
+import { removeBookingFromUser } from '../../services/bookingService'
 
 export default function AccommodationBookingCard({ accommodations, info, reservado = true }) {
+
+  const handleClick = () => {
+    if (!reservado) {
+      console.log(info.id)
+      removeBookingFromUser(info.id) 
+    }
+  }
   const [infoState, setInfoState] = useState([])
   const [accommodationState, setAccommodationState] = useState([])
 
@@ -89,7 +97,7 @@ export default function AccommodationBookingCard({ accommodations, info, reserva
         >
           Puede cancelar su reserva 
         </Chip>
-        <button id='cancelar'>{reservado ? 'Cancelar reserva' : ''}</button>
+        <button id='cancelar' onClick={handleClick} >{reservado ? 'Cancelar reserva' : 'Reserva cancelada'}</button>
       </CardContent>
     </Card>
   );

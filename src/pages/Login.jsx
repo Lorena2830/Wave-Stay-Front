@@ -62,7 +62,7 @@ function Login() {
             <SurfingIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Bienvenido a Wave Stay!
+            ¡Bienvenido a Wave Stay!
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1, width: '100%' }}>
             <TextField
