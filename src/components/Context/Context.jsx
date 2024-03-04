@@ -11,6 +11,7 @@ const AccommodationProvider = ({ children }) => {
     const getAccommodations = async () => {
       const { result } = await getAllAccommodations()
       setAccommodation(result)
+      setFilteredAccommodations(result)
     }
     getAccommodations()
   }, [])

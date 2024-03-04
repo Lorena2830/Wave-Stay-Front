@@ -1,0 +1,13 @@
+@keyframes fadeIn {
+    from {
+      opacity: 0; /* Inicia con opacidad cero */
+    }
+    to {
+      opacity: 1; /* Termina con opacidad completa */
+    }
+  }
+  
+  /* Aplicación de la animación al título h1 */
+ #welcome {
+    animation: fadeIn 1s ease-in-out; /* Nombre de la animación, duración, y función de temporización */
+  }

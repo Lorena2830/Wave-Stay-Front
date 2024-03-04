@@ -7,6 +7,7 @@ import Chip from '@mui/joy/Chip';
 import Typography from '@mui/joy/Typography';
 import AccommodationCard from '../AccommodationCard/AccommodationCard';
 import { useEffect, useState } from 'react';
+import './AccommodationBookingCard.css'
 
 export default function AccommodationBookingCard({ accommodations, info, reservado = true }) {
   const [infoState, setInfoState] = useState([])
@@ -40,7 +41,7 @@ export default function AccommodationBookingCard({ accommodations, info, reserva
       orientation="horizontal"
       id='bookingCard'
       sx={{
-        width: 800,
+        width: 700,
         height: 200,
         marginBottom: 5,
         '&:hover': { boxShadow: 'md', borderColor: 'neutral.outlinedHoverBorder' },

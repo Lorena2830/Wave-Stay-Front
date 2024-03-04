@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AccommodationBookingCard from '../../components/AccommodationBookingCard/AccommodationBookingCard';
 import { getOwnProfile } from '../../services/userService';
+import './Profile.css'
 
 function Profile() {
   const [user, setUser] = useState();
@@ -21,7 +22,7 @@ function Profile() {
     return user.bookings.map((booking, index) => {
        return (
         <>
-        <AccommodationBookingCard accommodations ={user.accommodation} key={index} info={booking} />
+       <AccommodationBookingCard accommodations ={user.accommodation} key={index} info={booking} />
         </>
        )
      })
@@ -34,11 +35,11 @@ function Profile() {
           Cargando...
         </h1> :
         <>
-          <h1>
-            Welcome!
+          <h1 id='welcome'style={{fontSize:'70px', marginTop:'30px', textAlign:'center',}}>
+            Welcome {user.username}!
           </h1>
           <div>
-            <h1>
+            <h1 style={{fontSize:'30px', marginLeft:'80px'}}>
               My bookings...
             </h1>
             { displayBookings() }

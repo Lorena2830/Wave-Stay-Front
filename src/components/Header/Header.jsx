@@ -160,7 +160,7 @@ export default function Header() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" style={{backgroundColor: '#DD7804'}}>
         <Toolbar>
         <Link to="/home">
         <IconButton
@@ -205,7 +205,7 @@ export default function Header() {
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
               color="inherit"
-            >
+            >s
               <MoreIcon />
             </IconButton>
           </Box>
