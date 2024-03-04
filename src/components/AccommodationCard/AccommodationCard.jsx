@@ -16,18 +16,22 @@ function AccommodationCard({info, favorite=false}) {
     }
   }
     return (
-      <Card id= 'accommodation'sx={{ maxWidth: 345 }}>
+      <Card id= 'accommodation'sx={{ maxWidth: 345, boxShadow: '5px 5px 10px 2px rgba(0, 0, 0, 0.1)' }}>
         <CardActionArea>
           <CardMedia
             component="img"
-            height="160"
+            height="190"
             width="300"
             image= {info.imageUrl}
             alt="fotodelacasa"
+            className='fotodelacasa'
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {info.name}
+            </Typography>
+            <Typography gutterBottom variant="" component="div">
+              {info.price} €/noche
             </Typography>
             <Typography variant="body2" color="text.secondary">
             {info.description_short}

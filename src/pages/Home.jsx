@@ -28,7 +28,7 @@ function Home() {
     })
   }
   return (
-    <div style={{display: 'flex', alignItems: 'center', gap:'30px' , flexWrap: 'wrap', height: '80vh', margin:'60px', justifyContent: 'center'}}>
+    <div style={{display: 'flex', alignItems: 'center', gap:'30px' , flexWrap: 'wrap', height: '80vh', margin:'60px', justifyContent: 'center', overflowY:'scroll'}}>
       {
         displayAccommodations()
       }
