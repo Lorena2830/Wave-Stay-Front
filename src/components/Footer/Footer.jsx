@@ -13,7 +13,7 @@ function Footer() {
     <div></div>
     <div className='grid'><p><h4>Social</h4></p>
     <Link to='/home/socialNetwork'>
-    <p>TRIBU SURF</p>
+    <p id='tribu'>TRIBU SURF</p>
     </Link>
     </div>
   </div>

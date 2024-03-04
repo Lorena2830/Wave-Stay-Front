@@ -29,6 +29,7 @@ function Profile() {
    }
     return (
       <>
+      <div id= 'All'>
       {
         !user ? 
         <h1>
@@ -40,7 +41,7 @@ function Profile() {
           </h1>
           <div>
             <p id='text'>
-              Mis reservas...
+              Tus reservas...
             </p>
             <div id= 'myBookings'>
             { displayBookings() }
@@ -48,6 +49,7 @@ function Profile() {
           </div>
         </>
       }
+      </div>
     </>
   );
 }

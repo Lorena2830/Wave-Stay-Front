@@ -1,0 +1,93 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        /* Inicia con opacidad cero */
+    }
+
+    to {
+        opacity: 1;
+        /* Termina con opacidad completa */
+    }
+}
+body {
+    height: 80%;
+}
+
+hr {
+    height: 1px;
+    color: rgba(243, 243, 243, 0.212);
+}
+
+.title {
+    animation: fadeIn 1s ease-in-out;
+    background-color: #048c98;;
+    color: rgb(238, 236, 236);
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    background-size: cover;
+    background-position: center;
+    height: 70px;
+    letter-spacing: 4px; 
+}
+
+.social {
+    width: 70%;
+    margin: auto 15%; 
+    padding: 10px;
+}
+
+.profile {
+    display: flex;
+    text-align: justify;
+    display: grid;
+    grid-template-columns: 0.1fr 0.9fr;
+}
+
+.image {
+    grid-column: 1;
+}
+
+.imagen{
+    grid-column: 1;
+    display: grid;
+    grid-template-rows: 0.5fr 0.5fr;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url(https://www.todosurf.com/wp-content/plugins/ultimate-member/assets/img/default_avatar.jpg);
+    background-size: cover;
+}
+
+.imagen_texto{
+    margin: 10px;
+    text-align: left;
+    font-size: small;
+    color: rgb(48, 48, 48);
+}
+
+.text {
+    grid-column: 2;
+}
+
+.parrafo {
+    display: grid;
+    grid-column: 2;
+    grid-template-rows: auto auto;
+    padding: 25px;
+    border-radius: 10px; 
+    background-color: rgb(243, 243, 243);
+    color: rgb(48, 48, 48);
+}
+
+.answer {
+    color: rgb(102, 102, 102);
+    font-size: small;
+}
+
+.space{
+    height: 20px;
+}

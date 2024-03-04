@@ -31,7 +31,7 @@ function Signup() {
       try {
         const { token } = await signup({ username, email, password });
         localStorage.setItem('token', token);
-        navigate('/home');
+        navigate('/');
       } catch (error) {
         console.error('Registration error:', error);
       }
@@ -74,7 +74,7 @@ function Signup() {
                 required
                 fullWidth
                 id="username"
-                label="Username"
+                label="Nombre de usuario"
                 autoFocus
                 sx={{ mt: 2, color: 'white' }}
                 InputProps={{ sx: { color: 'white' } }}
@@ -85,7 +85,7 @@ function Signup() {
                 required
                 fullWidth
                 id="email"
-                label="Email"
+                label="Correo Electrónico"
                 name="email"
                 autoComplete="email"
                 sx={{ mt: 2, color: 'white' }}
@@ -97,7 +97,7 @@ function Signup() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Contraseña"
                 type="password"
                 id="password"
                 autoComplete="new-password"
@@ -110,7 +110,7 @@ function Signup() {
                 required
                 fullWidth
                 name="confirmPassword"
-                label="Confirm Password"
+                label="Confirmar Contraseña"
                 type="password"
                 id="confirmPassword"
                 autoComplete="confirm-password"
@@ -129,12 +129,12 @@ function Signup() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2, borderRadius: 5, backgroundColor: 'orange',}}
               >
-                REGISTER ME
+                REGISTRARME
               </Button>
               <Grid container justifyContent="flex-end">
                 <Grid item>
                   <Link href="/" variant="body2" sx={{ color: 'white' }}>
-                    Already have an account? Sign in
+                    ¿Ya tienes una cuenta? Inicia aquí
                   </Link>
                 </Grid>
               </Grid>

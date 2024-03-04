@@ -62,7 +62,7 @@ function Login() {
             <SurfingIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Welcome to Wave Stay!
+            Bienvenido a Wave Stay!
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1, width: '100%' }}>
             <TextField
@@ -70,7 +70,7 @@ function Login() {
               required
               fullWidth
               id="email"
-              label="Email Address"
+              label="Correo Electrónico"
               name="email"
               autoComplete="email"
               autoFocus
@@ -83,7 +83,7 @@ function Login() {
               required
               fullWidth
               name="password"
-              label="Password"
+              label="Contraseña"
               type="password"
               id="password"
               autoComplete="current-password"
@@ -93,7 +93,7 @@ function Login() {
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              label="Recuérdame"
               sx={{ bgcolor: 'transparent', mb: 2 }}
             />
             <Button
@@ -102,17 +102,17 @@ function Login() {
               variant="contained"
               sx={{ bgcolor: 'orange', opacity: 0.7, mb: 1, borderRadius: 10,}} 
             >
-              Login
+              Iniciar Sesión
             </Button>
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
-                  Forgot password?
+                  ¿Olvidaste la contraseña?
                 </Link>
               </Grid>
               <Grid item>
                 <Link href="/signup" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                  {"¿No tienes un usuario? Regístrate"}
                 </Link>
               </Grid>
             </Grid>

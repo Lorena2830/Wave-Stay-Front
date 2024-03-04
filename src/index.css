@@ -65,6 +65,7 @@ button {
 }
 #profile {
   align-items: center;
+  height: 85vh;
 }
 #cancelar {
   width: 80%;

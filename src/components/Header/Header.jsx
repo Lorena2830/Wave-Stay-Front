@@ -110,7 +110,8 @@ export default function Header() {
     >
       <Link to={`/home/profile`}><MenuItem onClick={handleMenuClose}>Mi perfil</MenuItem></Link>
       <Link to={`/home/favorite`}><MenuItem onClick={handleMenuClose}>Mis Favoritos</MenuItem></Link>
-
+      <Link to={`/home/socialNetwork`}><MenuItem onClick={handleMenuClose}>Tribu Surf</MenuItem></Link>
+      <Link to={'/'}><MenuItem onClick={handleMenuClose}>Salir</MenuItem></Link>
     </Menu>
   );
 
@@ -160,7 +161,7 @@ export default function Header() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" style={{ background: 'linear-gradient(to right, #04ABBB , #DFE523 )' }}>
+      <AppBar position="static" style={{ background: ' #04ABBB ' }}>
         <Toolbar>
           <Link to="/home">
             <IconButton

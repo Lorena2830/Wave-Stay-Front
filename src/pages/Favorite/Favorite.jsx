@@ -35,10 +35,10 @@ const [favorites, setFavorites] = useState([])
        }
   return (
   <>
+  <div className='titulo'><h2><FavoriteBorderIcon style={{ color: 'pink' }} /> Tus alojamientos favoritos</h2></div>
   <div id= 'all'>
   <div className='imag'></div>
   <div className='favorite'>
-  <div className='titulo'><h2><FavoriteBorderIcon style={{ color: 'pink' }} />Alojamientos favoritos</h2></div>
   <div className='space'></div>
   <div className='tarjeta'>{displayFavoriteAcc() } </div>
   </div>

@@ -1,33 +1,48 @@
 @keyframes fadeIn {
     from {
-      opacity: 0; /* Inicia con opacidad cero */
+        opacity: 0;
+        /* Inicia con opacidad cero */
     }
-    to {
-      opacity: 1; /* Termina con opacidad completa */
-    }
-  }
-  
-  /* Aplicación de la animación al título h1 */
- #welcome {
-    animation: fadeIn 1s ease-in-out; /* Nombre de la animación, duración, y función de temporización */
-  }
 
-  #myBookings {
+    to {
+        opacity: 1;
+        /* Termina con opacidad completa */
+    }
+}
+
+/* Aplicación de la animación al título h1 */
+#welcome {
+    animation: fadeIn 1s ease-in-out;
+    background-color: #048c98;;
+    color: rgb(238, 236, 236);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    background-size: cover;
+    background-position: center;
+    height: 9%;
+    letter-spacing: 4px;
+    box-shadow: 0px 5px 5px rgba(168, 168, 168, 0.5); 
+}
+
+#myBookings {
     display: flex;
     flex-wrap: wrap;
     gap: 4%;
     justify-content: center;
     margin-top: 3%;
-  }
+}
+
 #text {
     font-size: 30px;
     text-align: center;
     margin-top: 3%;
 }
-#welcome {
-margin-top: 3%;
-text-align: center;
+body {
+    height: 80%;
 }
-
-
-style={{fontSize:'70px', marginTop:'30px', textAlign:'center',}}
+#All {
+    height: 80vh;
+}
