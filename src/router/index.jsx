@@ -6,6 +6,7 @@ import Signup from '../pages/Signup'
 import Favorite from "../pages/Favorite/Favorite";
 import Accommodation from '../pages/Accommodation'; 
 import Booking from "../pages/Booking/Booking";
+import SocialNetwork from "../pages/SocialNetwork/SocialNetwork";
 
 import Root from "../layouts";
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
             {
                 path:'/home/booking',
                 element: <Booking/>
+            },
+            {
+                path:'/home/socialNetwork',
+                element: <SocialNetwork/>
             }
     ]
 }

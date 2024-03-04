@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Footer/Footer.css'
-import Surf from '../../../images/Surf.png'
+import { Link } from 'react-router-dom'
 
 function Footer() {
     return (
@@ -12,7 +12,9 @@ function Footer() {
     </div>
     <div></div>
     <div className='grid'><p><h4>Social</h4></p>
-    <p>Nuestra red de información </p>
+    <Link to='/home/socialNetwork'>
+    <p>TRIBU SURF</p>
+    </Link>
     </div>
   </div>
     </>
