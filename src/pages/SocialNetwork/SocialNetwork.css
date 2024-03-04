@@ -63,10 +63,12 @@ hr {
 }
 
 .imagen_texto{
-    margin: 10px;
+    margin: 5px;
     text-align: left;
-    font-size: small;
-    color: rgb(48, 48, 48);
+    font-size: medium;
+    color: black;
+    font-weight: bold;
+    align-items: center;
 }
 
 .text {
@@ -77,14 +79,15 @@ hr {
     display: grid;
     grid-column: 2;
     grid-template-rows: auto auto;
-    padding: 25px;
-    border-radius: 10px; 
-    background-color: rgb(243, 243, 243);
-    color: rgb(48, 48, 48);
+    padding: 20px;
+    border-radius: 13px; 
+    background-color: rgba(190, 193, 193, 0.169);
+    color: rgb(0, 0, 0);
+    font-weight: normal;
 }
 
 .answer {
-    color: rgb(102, 102, 102);
+    color: black;
     font-size: small;
 }
 

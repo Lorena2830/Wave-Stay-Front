@@ -58,7 +58,7 @@ function SocialNetwork() {
         </div>
         <div className='text'> 
         <div className='parrafo'>
-        <p>Acabo de desayunar, y mira que olas!!!!<br /> ¿Alguien se apunta hoy en el norte a bajar conmigo? <br /> <img src="https://www.surf-forecast.com/system/images/1496/large/La-Cicer.jpg?1285495111" alt="olas" /> </p>         </div>        </div>
+        <p>¡La emoción de montar una ola es incomparable! Cada vez que me subo a mi tabla, siento la energía del océano y la adrenalina recorriendo mi cuerpo. El sonido del agua rompiendo, el viento en mi rostro y la sensación de libertad absoluta son simplemente indescriptibles. ¡El surf no es solo un deporte, es un estilo de vida! 🏄‍♂️🌊 #SurfLife<br /><br /> <img src="https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2017/08/24/15035679689708.gif" alt="olas" /> </p>         </div>        </div>
         </div>
         <div className='answer'><p>Posteado: 20/02/2022  03:40 pm</p></div>
       <hr />

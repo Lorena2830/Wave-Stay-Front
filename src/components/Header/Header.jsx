@@ -17,7 +17,6 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Link } from 'react-router-dom';
 import '../Header/Header.css'
-import { Surfing } from '@mui/icons-material';
 import { AccommodationContext, AccommodationProvider } from '../Context/Context';
 
 
@@ -107,11 +106,19 @@ export default function Header() {
       }}
       open={isMenuOpen}
       onClose={handleMenuClose}
-    >
-      <Link to={`/home/profile`}><MenuItem onClick={handleMenuClose}>Mi perfil</MenuItem></Link>
-      <Link to={`/home/favorite`}><MenuItem onClick={handleMenuClose}>Mis Favoritos</MenuItem></Link>
-      <Link to={`/home/socialNetwork`}><MenuItem onClick={handleMenuClose}>Tribu Surf</MenuItem></Link>
-      <Link to={'/'}><MenuItem onClick={handleMenuClose}>Salir</MenuItem></Link>
+      >
+      <Link to={'/home/profile'} style={{ textDecoration: 'none', color: 'black' }}>
+        <MenuItem onClick={handleMenuClose}>Mis Reservas</MenuItem>
+      </Link>
+      <Link to={'/home/favorite'} style={{ textDecoration: 'none', color: 'black' }}>
+        <MenuItem onClick={handleMenuClose}>Mis Favoritos</MenuItem>
+      </Link>
+      <Link to={'/home/socialNetwork'} style={{ textDecoration: 'none', color: 'black' }}>
+        <MenuItem onClick={handleMenuClose}>Tribu Surf</MenuItem>
+      </Link>
+      <Link to={'/'} style={{ textDecoration: 'none', color: 'red' }}>
+        <MenuItem onClick={handleMenuClose}>Salir</MenuItem>
+      </Link>
     </Menu>
   );
 
