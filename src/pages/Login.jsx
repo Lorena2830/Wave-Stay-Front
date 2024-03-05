@@ -60,7 +60,7 @@ function Login() {
           >
             <Avatar sx={{ 
               m: 2, 
-              bgcolor: 'rgba(25,118, 210, 0.9)', 
+              bgcolor: '#00607C', 
               opacity: 1, 
               }}
             >
@@ -111,7 +111,7 @@ function Login() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ bgcolor: 'sky-blue', opacity: 0.9, mb: 1, borderRadius: 10, fontSize: '1.1rem' }}
+                sx={{ bgcolor: '#00607C', opacity: 0.9, mb: 1, borderRadius: 10, fontSize: '1.1rem' }}
               >
                 Iniciar Sesión
               </Button>

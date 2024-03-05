@@ -7,7 +7,7 @@ import './Profile.css'
 
 function Profile() {
   const [user, setUser] = useState();
-  
+
   useEffect(() => {
     const fetchProfile = async () => {
       try {
@@ -22,35 +22,35 @@ function Profile() {
 
   const displayBookings = () => {
     return user.bookings.map((booking, index) => {
-       return (
+      return (
         <>
-       <AccommodationBookingCard accommodations ={user.accommodation} key={index} info={booking} />
+          <AccommodationBookingCard accommodations={user.accommodation} key={index} info={booking} />
         </>
-       )
-     })
-   }
-    return (
-      <>
-      <div id= 'All'>
-      {
-        !user ? 
-      <Box sx={{ display: 'flex', justifyContent:'center' }}>
-      <CircularProgress />
-      </Box>:
-        <>
-          <h1 id='welcome'>
-              Hola... {user.username}!
-          </h1>
-          <div>
-            <p id='text'>
-              Tus reservas...
-            </p>
-            <div id= 'myBookings'>
-            { displayBookings() }
-          </div>
-          </div>
-        </>
-      }
+      )
+    })
+  }
+  return (
+    <>
+      <div id='All'>
+        {
+          !user ?
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+              <CircularProgress />
+            </Box> :
+            <>
+              <h1 id='welcome'>
+                Hola... {user.username}!
+              </h1>
+              <div>
+                <p id='text'>
+                  Tus reservas...
+                </p>
+                <div id='myBookings'>
+                  {displayBookings()}
+                </div>
+              </div>
+            </>
+        }
       </div>
     </>
   );

@@ -25,7 +25,7 @@ function Signup() {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password !== confirmP) {
-      setErrorMessage('Passwords do not match'); 
+      setErrorMessage('Contraseñas no coinciden'); 
       return;
     } else {
       try {
@@ -52,7 +52,7 @@ function Signup() {
         }}
       >
         <CssBaseline />
-        <Container component="main" maxWidth="xs" sx={{ backgroundColor: 'rgba(10, 10, 10, 0.4)', borderRadius: '40px', padding: '30px', opacity: 3.9 }}>
+        <Container component="main" maxWidth="xs" sx={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', borderRadius: '30px', padding: '80px' }}>
           <Box
             sx={{
               display: 'flex',
@@ -60,11 +60,11 @@ function Signup() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'orange', opacity: 1 }}>
+            <Avatar sx={{ m: 2, bgcolor: '#00607c', opacity: 1 }}>
               <HouseboatIcon />
             </Avatar>
-            <Typography component="h1" variant="h5" sx={{ color: 'white' }}>
-              User Register
+            <Typography component="h1" variant="h5" sx={{ color: 'black' }}>
+              Crea una cuenta
             </Typography>
             <Box component="form" noValidate onSubmit={onSignUp} sx={{ mt: 5 }}>
               <TextField
@@ -77,8 +77,8 @@ function Signup() {
                 label="Nombre de usuario"
                 autoFocus
                 sx={{ mt: 2, color: 'white' }}
-                InputProps={{ sx: { color: 'white' } }}
-                InputLabelProps={{ sx: { color: 'white' } }}
+                InputProps={{ sx: { color: 'black' } }}
+                InputLabelProps={{ sx: { color: 'black' } }}
               />
               <TextField
                 onChange={(e) => setEmail(e.target.value)}
@@ -89,8 +89,8 @@ function Signup() {
                 name="email"
                 autoComplete="email"
                 sx={{ mt: 2, color: 'white' }}
-                InputProps={{ sx: { color: 'white' } }}
-                InputLabelProps={{ sx: { color: 'white' } }}
+                InputProps={{ sx: { color: 'black' } }}
+                InputLabelProps={{ sx: { color: 'black' } }}
               />
               <TextField
                 onChange={(e) => setPassword(e.target.value)}
@@ -102,8 +102,8 @@ function Signup() {
                 id="password"
                 autoComplete="new-password"
                 sx={{ mt: 2, color: 'white' }}
-                InputProps={{ sx: { color: 'white' } }}
-                InputLabelProps={{ sx: { color: 'white' } }}
+                InputProps={{ sx: { color: 'black' } }}
+                InputLabelProps={{ sx: { color: 'black' } }}
               />
               <TextField
                 onChange={(e) => setConfirmP(e.target.value)}
@@ -115,8 +115,8 @@ function Signup() {
                 id="confirmPassword"
                 autoComplete="confirm-password"
                 sx={{ mt: 2, color: 'white' }}
-                InputProps={{ sx: { color: 'white' } }}
-                InputLabelProps={{ sx: { color: 'white' } }}
+                InputProps={{ sx: { color: 'black' } }}
+                InputLabelProps={{ sx: { color: 'black' } }}
               />
               {errorMessage && (
                 <Typography variant="body2" color="error" sx={{ mt: 2 }}>
@@ -127,13 +127,13 @@ function Signup() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2, borderRadius: 5, backgroundColor: 'orange',}}
+                sx={{ mt: 3, mb: 2, borderRadius: 5, backgroundColor: '#00607c',}}
               >
                 REGISTRARME
               </Button>
               <Grid container justifyContent="flex-end">
                 <Grid item>
-                  <Link href="/" variant="body2" sx={{ color: 'white' }}>
+                  <Link href="/login" variant="body2" sx={{ color: 'black' }}>
                     ¿Ya tienes una cuenta? Inicia aquí
                   </Link>
                 </Grid>
