@@ -7,6 +7,8 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import SurfingIcon from '@mui/icons-material/Surfing';
 import WifiIcon from '@mui/icons-material/Wifi';
+import MicrowaveIcon from '@mui/icons-material/Microwave';
+import LocalParkingIcon from '@mui/icons-material/LocalParking';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css'
 import { Link } from 'react-router-dom';
@@ -15,6 +17,7 @@ import { useParams } from 'react-router-dom';
 import { DateRange } from 'react-date-range'
 import { useEffect } from 'react';
 import { createBooking } from '../../services/bookingService';
+
 
 function AccommodationUnique({ info, data }) {
   const [disableDates, setDisableDates] = useState([])
@@ -63,11 +66,31 @@ function AccommodationUnique({ info, data }) {
   return (
     <div className='oneCard'> {/* Div de todo el componente */}
       <div className="space"></div>
-      <div><h2>{info.name}</h2>   </div>
+      {/* <div><h2>{info.name}</h2>   </div> */}
       <div className="space"></div>
       <div className="space"></div> {/* Div de las imagenes */}
       <div className='grid-wrapper'>
-        <div className='grid-wrapper-item'><img src={info.imageUrl} alt="" className="grid-wrapper-img" /></div>
+
+ {/* Imagen 1 */}
+ <div className='grid-wrapper-item'>
+          <img src={info.imageUrl} alt="" className="grid-wrapper-img" />
+          <div className="cuadro_titulo centrado animacion">
+                            <div className="padding">
+                                <p className="pre_titulo">
+                                <h2>{info.name}</h2>                                 </p>
+                                    
+                                    <div className="precio_noche centrado">
+                                        <p className="coste">
+                                        {info.price} € 
+                                        </p>
+                                        <span> <strong>/noche </strong> </span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+          </div>
+       
+
         <div className='grid-wrapper-item'><img src={info.imageUrl1} alt="" className="grid-wrapper-img" /></div>
         <div className='grid-wrapper-item'><img src={info.imageUrl2} alt="" className="grid-wrapper-img" /></div>  </div>
 
@@ -120,8 +143,8 @@ function AccommodationUnique({ info, data }) {
         <p><h3>Descubre el alojamiento</h3> <br /></p>
         <p>Nuestro alojamiento está ubicado en {info.address}</p>
         <p>{info.description_large} <br />
-          Escríbemos sin ningún tipo de compromiso, te podemos ayudar info@alojamiento.com <br />
-          Si quieres reservar en nuestra web te recordamos que no disponemos de pago web, se tendrá <br />
+          Escríbemos sin ningún tipo de compromiso, te podemos ayudar wave-stay@info.com  <br />
+          Si quieres reservar en nuestra web te recordamos que no disponemos de pago web, se tendrá
           que pagar una vez se llegue al alojamiento. <br />
           El precio de la estancia/noche es {info.price} €
         </p>
@@ -157,15 +180,14 @@ function AccommodationUnique({ info, data }) {
         </div>
       </div>
 
-
       <hr />
       <div className="box">
         <p><h3>¿Qué hay en este alojamiento?</h3><br /></p>
         <p><BeachAccessIcon />Vistas a la playa</p>
         <p><SurfingIcon />Academia de surf cerca</p>
         <p><WifiIcon />Wifi</p>
-        <p>Cocina</p>
-        <p>Aparcamiento privado</p>
+        <p><MicrowaveIcon/>Cocina</p>
+        <p><LocalParkingIcon/>Aparcamiento privado</p>
       </div>
       <hr />
       <h3>Elige la duración de tu estancia:</h3>
