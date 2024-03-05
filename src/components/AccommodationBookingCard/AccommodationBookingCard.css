@@ -1,5 +1,11 @@
 #cancelar {
     background-color: rgb(217, 222, 226);
-    width: 95%;
+    width: 100%;
     margin-top: 5%;
+}
+#cancelar:hover {
+    border-color: rgb(253, 246, 246);
+    color:rgb(248, 242, 242);
+    background-color: rgb(9, 9, 9);
+    opacity: 0.4;
 }

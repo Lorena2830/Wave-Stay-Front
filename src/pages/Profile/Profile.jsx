@@ -32,9 +32,9 @@ function Profile() {
       <div id= 'All'>
       {
         !user ? 
-        <h1>
+        <h2>
           Cargando...
-        </h1> :
+        </h2> :
         <>
           <h1 id='welcome'>
               Hola... {user.username}!

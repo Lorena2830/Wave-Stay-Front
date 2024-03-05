@@ -178,7 +178,7 @@ export default function Header() {
               aria-label="open drawer"
               sx={{ mr: 2, color: "white" }}
             >
-              <SurfingIcon />
+              <SurfingIcon fontSize='large'/>
             </IconButton>
           </Link>
           <Typography variant="h4" component="div" sx={{ flexGrow: 1, fontFamily: 'Original Surfer' }}>
@@ -205,7 +205,7 @@ export default function Header() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircle fontSize='large'/>
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
