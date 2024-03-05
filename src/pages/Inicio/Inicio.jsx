@@ -16,7 +16,7 @@ function Inicio() {
             <li>Con una red social interna</li>
           </ul>
         </div>
-        <div className='grid'>
+        <div className='inicio-grid'>
         <div className='botones'>
           <Link to='/signup'>
             <button id='botones'>REGISTRARSE</button>
