@@ -8,17 +8,19 @@ import Typography from '@mui/joy/Typography';
 import AccommodationCard from '../AccommodationCard/AccommodationCard';
 import { useEffect, useState } from 'react';
 import './AccommodationBookingCard.css'
-import { removeBookingFromUser } from '../../services/bookingService'
+import {deleteBooking} from '../../services/bookingService'
+//import { useNavigate } from 'react-router-dom';
 
 export default function AccommodationBookingCard({ accommodations, info}) {
 const [reservado, setReservado] = useState(true)
-
+//const navigate = useNavigate();
   const handleClick = () => {
     const estabaReservado = reservado;
     setReservado(!estabaReservado)
     if (estabaReservado) {
-      removeBookingFromUser(info.id) 
-      console.log(reservado)
+      deleteBooking(info.id)
+
+      //navigate('/home')
     }
   }
   const [infoState, setInfoState] = useState([])
@@ -99,7 +101,9 @@ const [reservado, setReservado] = useState(true)
         >
           Puede cancelar su reserva 
         </Chip>
-        <button id='cancelar' onClick={handleClick} >{reservado ? 'Cancelar reserva' : 'Reserva cancelada'}</button>
+        <Link>
+        <button id='cancelar' onClick={handleClick}>{reservado ? 'Cancelar reserva' : 'Su reserva ha sido cancelada'}</button>
+        </Link>
       </CardContent>
     </Card>
   );

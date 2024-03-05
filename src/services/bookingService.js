@@ -42,16 +42,17 @@ export const getBookingsByUser = async (id) => {
     }
 }
 
-export const removeBookingFromUser = async (id) => {
+export const deleteBooking = async (id) => {
     try {
-        const { data } = await app.delete('booking/remove', {
-          headers: {
-            authorization: localStorage.getItem("token"),
-          },
-          data: { id: id }
-        } )
-        return data
+        const { data } = await app.delete(`booking/${id}`, {
+            headers: {
+                authorization: localStorage.getItem("token"),
+            },
+        });
+        console.log(data, 'data delete')
+        return data;
     } catch (error) {
-        console.log(error);
+        console.error("Error fetching bookings:", error);
+        throw error;
     }
 }
