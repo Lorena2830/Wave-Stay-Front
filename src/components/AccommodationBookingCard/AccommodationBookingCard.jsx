@@ -19,7 +19,7 @@ const [reservado, setReservado] = useState(true)
     setReservado(!estabaReservado)
     if (estabaReservado) {
       deleteBooking(info.id)
-
+     // window.alert("¡Su reserva ha sido cancelada con éxito!");
       //navigate('/home')
     }
   }

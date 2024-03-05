@@ -15,7 +15,6 @@ body {
 
 .footer {
   width: 100%;
-
 }
 
 .textoEncima {
@@ -33,7 +32,7 @@ body {
   position: static;
   bottom: 0;
   width: 100%;
-  background-color: #048c98;;
+  background-color: #048c98;
   vertical-align: middle;
   color: rgb(233, 233, 233);
   font-size: 16px;

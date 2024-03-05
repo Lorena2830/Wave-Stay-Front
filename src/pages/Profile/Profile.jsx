@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import AccommodationBookingCard from '../../components/AccommodationBookingCard/AccommodationBookingCard';
 import { getOwnProfile } from '../../services/userService';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 import './Profile.css'
 
 function Profile() {
@@ -32,9 +34,9 @@ function Profile() {
       <div id= 'All'>
       {
         !user ? 
-        <h2>
-          Cargando...
-        </h2> :
+      <Box sx={{ display: 'flex', justifyContent:'center' }}>
+      <CircularProgress />
+      </Box>:
         <>
           <h1 id='welcome'>
               Hola... {user.username}!

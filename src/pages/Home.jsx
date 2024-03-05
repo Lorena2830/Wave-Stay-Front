@@ -20,7 +20,7 @@ function Home() {
     })
   }
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '60px', flexWrap: 'wrap', width: '80vw', height: '100%', margin: 'auto', marginTop: '60px', marginBottom: '60px', justifyContent: 'center', overflow: 'hidden'}}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '70px', flexWrap: 'wrap', width: '80vw', height: '100%', margin: 'auto', marginTop: '80px', marginBottom: '60px', justifyContent: 'center', overflow: 'hidden'}}>
       {
         displayAccommodations()
       }
