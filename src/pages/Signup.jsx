@@ -31,7 +31,7 @@ function Signup() {
       try {
         const { token } = await signup({ username, email, password });
         localStorage.setItem('token', token);
-        navigate('/');
+        navigate('/login');
       } catch (error) {
         console.error('Registration error:', error);
       }
