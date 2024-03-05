@@ -40,7 +40,7 @@ function AccommodationCard({info, favorite=false}) {
         </CardActionArea>
         
         <CardActions id= 'favorite'>
-          <Link><Button size="large" onClick={handleClick}>{favorite ? '' : 'Añadir a favorito'}
+          <Link><Button size="large" style={{color:'#048c98'}} onClick={handleClick}>{favorite ? '' : 'Añadir a favorito'}
           </Button>
           </Link>
         </CardActions>
