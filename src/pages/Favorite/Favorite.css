@@ -53,11 +53,12 @@ hr {
 }
 
 .tarjeta {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content:space-between;
     gap: 25px;
     margin-top: 5%;
 } 
 #all {
-    height: 80vh;
+    height: 100vh;
 }
