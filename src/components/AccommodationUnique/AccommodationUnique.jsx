@@ -17,6 +17,7 @@ import { useParams } from 'react-router-dom';
 import { DateRange } from 'react-date-range'
 import { useEffect } from 'react';
 import { createBooking } from '../../services/bookingService';
+import {addOneAccToFavorite} from '../../services/accommodationService'
 
 
 function AccommodationUnique({ info, data }) {
@@ -39,11 +40,9 @@ function AccommodationUnique({ info, data }) {
   function obtenerFechasIntermedias(fechaInicio, fechaFin) {
     const fechasIntermedias = [];
 
-    // Convierte las cadenas de fecha en objetos Date
     const fechaInicioObj = new Date(fechaInicio);
     const fechaFinObj = new Date(fechaFin);
 
-    // Incrementa la fecha de inicio hasta la fecha de fin y agrega cada fecha al array
     for (let fecha = fechaInicioObj; fecha <= fechaFinObj; fecha.setDate(fecha.getDate() + 1)) {
       fechasIntermedias.push(new Date(fecha));
     }
@@ -53,8 +52,8 @@ function AccommodationUnique({ info, data }) {
 
   async function handdleCreateBooking() {
     const userId = localStorage.getItem('id')
+    const add = await addOneAccToFavorite(accommodationId)
     const { result } = await createBooking({ accommodationId: accommodationId, startdate: ranges[0].startDate, endingdate: ranges[0].endDate, userId })
-    console.log(result)
   }
 
   function handleSelect(newRanges) {
@@ -71,25 +70,25 @@ function AccommodationUnique({ info, data }) {
       <div className="space"></div> {/* Div de las imagenes */}
       <div className='grid-wrapper'>
 
- {/* Imagen 1 */}
- <div className='grid-wrapper-item'>
+        {/* Imagen 1 */}
+        <div className='grid-wrapper-item'>
           <img src={info.imageUrl} alt="" className="grid-wrapper-img" />
           <div className="cuadro_titulo centrado animacion">
-                            <div className="padding">
-                                <p className="pre_titulo">
-                                <h2>{info.name}</h2>                                 </p>
-                                    
-                                    <div className="precio_noche centrado">
-                                        <p className="coste">
-                                        {info.price} € 
-                                        </p>
-                                        <span> <strong>/noche </strong> </span>
-                                    </div>
-                                
-                            </div>
-                        </div>
+            <div className="padding">
+              <p className="pre_titulo">
+                <h2>{info.name}</h2>                                 </p>
+
+              <div className="precio_noche centrado">
+                <p className="coste">
+                  {info.price} €
+                </p>
+                <span> <strong>/noche </strong> </span>
+              </div>
+
+            </div>
           </div>
-       
+        </div>
+
 
         <div className='grid-wrapper-item'><img src={info.imageUrl1} alt="" className="grid-wrapper-img" /></div>
         <div className='grid-wrapper-item'><img src={info.imageUrl2} alt="" className="grid-wrapper-img" /></div>  </div>
@@ -186,8 +185,8 @@ function AccommodationUnique({ info, data }) {
         <p><BeachAccessIcon />Vistas a la playa</p>
         <p><SurfingIcon />Academia de surf cerca</p>
         <p><WifiIcon />Wifi</p>
-        <p><MicrowaveIcon/>Cocina</p>
-        <p><LocalParkingIcon/>Aparcamiento privado</p>
+        <p><MicrowaveIcon />Cocina</p>
+        <p><LocalParkingIcon />Aparcamiento privado</p>
       </div>
       <hr />
       <h3>Elige la duración de tu estancia:</h3>
